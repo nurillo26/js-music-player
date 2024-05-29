@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Alkatra', cursive;
+}
+
+.wrap {
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+    background: linear-gradient(90deg,#010133,#2d376c,#fd6284,#658a94,#3f5c63);
+
+    padding: 20px 0;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-items: center;
+
+    width: 375px;
+    height: 672px;
+
+    padding: 40px 25px 28px;
+    
+    background: linear-gradient(143.14deg, #2C3137 8.7%, #17191D 89.31%);
+    border-radius: 28px;
+}
+
+.player_header {
+    width: 100%;
+    height: 48px;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Player header */
+.header_btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #2E3339;
+    box-shadow: -4px -4px 12px rgba(122, 134, 151, 0.201623), 4px 4px 12px rgba(0, 0, 0, 0.301983);
+    border: 2px solid linear-gradient(144.06deg, #40454A 16.19%, #202329 82.15%);
+}
+
+.song_info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 24px;
+}
+
+.song_name {
+    font-size: 24px;
+    font-weight: 400;
+    color: #999999;
+}
+
+.artist {
+    font-size: 14px;
+    color: #666666;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+
+/* Album logo */
+.album_logo {
+    width: 267px;
+    height: 267px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+
+    border: 4px solid #41464B;
+    background: linear-gradient(141.82deg, #0F1314 14.93%, #121617 82.73%);
+    box-shadow: -8px -8px 20px rgba(122, 134, 151, 0.148847), 8px 8px 20px rgba(0, 0, 0, 0.301983);
+}
+
+.album_logo > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+/* Lyrics */
+.lyrics {
+    width: 251px;
+    height: 98px;
+   
+    text-align: center;
+    
+    font-size: 18px;
+    color: #666666;
+    
+    mix-blend-mode: normal;
+    opacity: 0.3;
+    overflow: hidden;
+}
+
+
+/* Progress bar and audio time */
+.progress {
+    width: 100%;
+    height: 11px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.audio_time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 28px;
+    height: 100%;
+
+    font-size: 11px;
+    line-height: 11px;
+    color: #666666;
+}
+
+.progress-bar_wrap {
+    width: 247px;
+    height: 5.5px;
+    background: #111216;
+    border-radius: 2.5px;
+
+    cursor: pointer;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #FF611A 0%, #CB340D 82.68%);
+    border-radius: 2.5px;  
+}
+
+
+/* Navigation buttons */
+.buttons {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prev_audio,
+.next_audio {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #1A1C20;
+    box-shadow: -8px -8px 20px rgba(122, 134, 151, 0.101672), 8px 8px 20px rgba(0, 0, 0, 0.353065);
+    cursor: pointer;
+}
+
+.play_audio {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(140.14deg, #EC540E 15.05%, #D6361F 114.99%),
+    linear-gradient(142.51deg, #FF9465 8.65%, #AF1905 88.82%);
+    box-shadow: -8px -8px 20px rgba(219, 76, 11, 0.246749), 8px 8px 20px rgba(69, 9, 0, 0.564931);
+    
+    border: 4px solid rgba(255, 110, 58, 0.681);
+   
+    cursor: pointer;
+}
+
+.play_audio > img {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+.play_audio > .pause_img {
+    filter: invert(1);
+    margin-left: 0;
+}
+
+.rotate_img {
+    animation: rotateSongLogo 10s linear infinite;
+}
+
+@keyframes rotateSongLogo {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.btn_audio {
+    animation: scaleButton .3s ease-in-out;
+}
+
+@keyframes scaleButton {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.93);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .player {
+        width: 90vw;
+        height: 90vh;
+    }
+
+    .progress-bar_wrap {
+        width: 224px;
+    }
+}
+
+
